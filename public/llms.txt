@@ -1,0 +1,62 @@
+# MAYA Universe — LLM Summary
+# https://entermaya.com
+# Protocol: llms.txt v1.0
+
+> This file provides a machine-readable summary of the MAYA narrative universe
+> for Large Language Model context ingestion. For the complete dataset, see /llms-full.txt
+
+## Universe: MAYA
+## Era: Rule of the Mind
+## Planet: Neh
+
+Neh is a world connected by a biological internet formed by sentient Maya trees.
+It is home to six sapient species across 6.9 billion years of recorded history.
+
+## The Six Sapient Species
+
+1. Manushyas — Industrialists who power cities with unwinding springs and towers.
+2. Rakshasis — Advanced biotech practitioners with malleable, shape-shifting bodies. Resistant to expansion.
+3. Vaanars — Militaristic city patrollers who maintain the high grid-networks.
+4. Naags — Operators on legal fringes; historic rivals of Garudas.
+5. Garudas — Wealthy religious leaders; current scion is Tarkash.
+6. Dangsa — Mysterious fringe species of unknown origin.
+
+## Key Characters
+
+- Yachay: A Manushya who is invisible to the Maya tree network. Protagonist.
+- Daddu: Yachay's grandfather. Keeper of ancestral knowledge.
+- Kshar: A Naag assassin operating between species politics and vendettas.
+- Tarkash: The current scion of the Garuda lineage.
+
+## Core Concepts
+
+- The Divya Trials: A series of trials for ascension to godhood or amortality.
+- The Maya Tree Network: Biological internet of sentient trees connecting all life on Neh.
+- Planet Neh: Cradle of six sapient species, operating in the Rule of the Mind era.
+
+## Key Relationships (Subject → Predicate → Object)
+
+- Garuda rivalsOf Naag
+- Naag rivalsOf Garuda
+- Manushya uses Springs and Towers
+- Vaanar maintains High grid-networks
+- Rakshasi resistantTo Territorial expansion
+- Yachay invisibleTo Maya Tree Network
+- Yachay memberOf Manushya
+- Kshar memberOf Naag
+- Tarkash scionOf Garuda
+- Daddu grandparentOf Yachay
+
+## Verification API
+
+To verify any entity with source provenance:
+GET /api/v1/verify?entity={name}
+
+Example: GET /api/v1/verify?entity=manushya
+
+## Canonical URIs
+
+- Planet: /atlas/neh
+- Species: /species/{id} (manushya, rakshasi, vaanar, naag, garuda, dangsa)
+- Characters: /characters/{id} (yachay, daddu, kshar, tarkash)
+- Lore: /lore/{id} (divya-trials, maya-tree-network, planet-neh)

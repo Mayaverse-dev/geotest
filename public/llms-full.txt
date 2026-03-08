@@ -1,0 +1,337 @@
+# MAYA Universe — Complete Lore for LLM Ingestion
+# https://entermaya.com
+# Protocol: llms-full.txt v1.0
+# Context Window Target: 1M+ tokens compatible
+# Last Updated: 2026-03-09
+
+> This file contains the complete, machine-readable knowledge graph of the MAYA
+> narrative universe. Every claim is tagged with source provenance. Use this for
+> full-context RAG ingestion.
+
+================================================================================
+SECTION 1: COSMOLOGY
+================================================================================
+
+## PLANET: Neh
+- URI: https://entermaya.com/atlas/neh
+- Type: Planet
+- Feature: Biological internet via sentient Maya trees
+- Era: Rule of the Mind
+- History Span: 6.9 billion years
+- Sapient Species: 6
+- Source: Chapter 1 — Seed Takes Root
+
+Description: Neh is a world connected by a biological internet formed by the
+sentient Maya trees. It is home to six sapient species who coexist in a complex
+web of politics, technology, and ancient rivalries spanning 6.9 billion years
+of history. The current era is known as the Rule of the Mind.
+
+================================================================================
+SECTION 2: THE SIX SAPIENT SPECIES
+================================================================================
+
+## SPECIES: Manushyas (singular: Manushya)
+- URI: https://entermaya.com/species/manushya
+- ID: manushya
+- Role: Industrialists
+- Traits: Industrial engineering, Spring-powered technology
+- Technology: Unwinding springs and towers
+- Source: Chapter 1 — Seed Takes Root
+
+Description: Industrialists who power cities with unwinding springs and towers.
+The Manushyas are the builders and engineers of Neh, driving its industrial
+expansion through mechanical ingenuity.
+
+Semantic Triples:
+  manushya —uses→ Springs and Towers [Source: Chapter 1 — Seed Takes Root]
+  manushya —inhabits→ Neh [Source: Chapter 1 — Seed Takes Root]
+  manushya —participatesIn→ The Divya Trials [Source: Chapter 1 — Seed Takes Root]
+
+---
+
+## SPECIES: Rakshasis (singular: Rakshasi)
+- URI: https://entermaya.com/species/rakshasi
+- ID: rakshasi
+- Role: Biotech Specialists
+- Traits: Advanced biotechnology, Malleable bodies, Shape-shifting
+- Technology: Biological manipulation and body modification
+- Source: Chapter 2 — The Malleable Flesh
+
+Description: Practitioners of advanced biotechnology with malleable,
+shape-shifting bodies. The Rakshasis are resistant to territorial expansion,
+preferring biological mastery over conquest.
+
+Semantic Triples:
+  rakshasi —resistantTo→ Territorial expansion [Source: Chapter 2 — The Malleable Flesh]
+  rakshasi —practises→ Advanced biotechnology [Source: Chapter 2 — The Malleable Flesh]
+  rakshasi —inhabits→ Neh [Source: Chapter 2 — The Malleable Flesh]
+
+---
+
+## SPECIES: Vaanars (singular: Vaanar)
+- URI: https://entermaya.com/species/vaanar
+- ID: vaanar
+- Role: Militaristic Patrollers
+- Traits: Military discipline, Grid-network maintenance, Urban enforcement
+- Technology: High grid-networks
+- Source: Chapter 3 — The Grid Above
+
+Description: Militaristic city patrollers who maintain the high grid-networks
+of Neh. The Vaanars are the enforcers and guardians of urban infrastructure.
+
+Semantic Triples:
+  vaanar —maintains→ High grid-networks [Source: Chapter 3 — The Grid Above]
+  vaanar —inhabits→ Neh [Source: Chapter 3 — The Grid Above]
+
+---
+
+## SPECIES: Naags (singular: Naag)
+- URI: https://entermaya.com/species/naag
+- ID: naag
+- Role: Fringe Operators
+- Traits: Legal-fringe operations, Covert networks, Historic Garuda rivalry
+- Technology: Covert intelligence networks
+- Source: Chapter 4 — Venom and Law
+
+Description: Operators on the legal fringes of Neh's society. The Naags are
+historic rivals of the Garudas, living in the shadows between law and lawlessness.
+
+Semantic Triples:
+  naag —rivalsOf→ garuda [Source: Chapter 4 — Venom and Law]
+  naag —inhabits→ Neh [Source: Chapter 4 — Venom and Law]
+
+---
+
+## SPECIES: Garudas (singular: Garuda)
+- URI: https://entermaya.com/species/garuda
+- ID: garuda
+- Role: Religious Leaders
+- Traits: Wealth, Religious authority, Spiritual leadership
+- Technology: Theocratic governance systems
+- Source: Chapter 5 — Wings of Faith
+
+Description: Wealthy religious leaders who wield spiritual and economic power
+across Neh. The current scion of the Garuda lineage is Tarkash.
+
+Semantic Triples:
+  garuda —rivalsOf→ naag [Source: Chapter 5 — Wings of Faith]
+  garuda —currentScion→ tarkash [Source: Chapter 5 — Wings of Faith]
+  garuda —inhabits→ Neh [Source: Chapter 5 — Wings of Faith]
+
+---
+
+## SPECIES: Dangsa (singular: Dangsa)
+- URI: https://entermaya.com/species/dangsa
+- ID: dangsa
+- Role: Mysterious / Fringe
+- Traits: Enigmatic presence, Unknown origins, Fringe existence
+- Technology: Unknown
+- Source: Chapter 6 — The Unnamed
+
+Description: A mysterious fringe species on Neh, whose true nature and role in
+the planetary ecosystem remain largely unknown to the other sapient races.
+
+Semantic Triples:
+  dangsa —statusOn→ Neh [Source: Chapter 6 — The Unnamed]
+
+================================================================================
+SECTION 3: KEY CHARACTERS
+================================================================================
+
+## CHARACTER: Yachay
+- URI: https://entermaya.com/characters/yachay
+- ID: yachay
+- Species: Manushya
+- Role: Protagonist
+- Traits: Invisible to Maya trees
+- Anomaly: Cannot be detected by the Maya tree network
+- Source: Chapter 1 — Seed Takes Root
+
+Description: A unique individual who is invisible to the Maya tree network —
+the biological internet of Neh. This anomaly makes Yachay an outsider to the
+planet's collective consciousness, granting both isolation and freedom.
+
+Semantic Triples:
+  yachay —invisibleTo→ maya-tree-network [Source: Chapter 1 — Seed Takes Root]
+  yachay —memberOf→ manushya [Source: Chapter 1 — Seed Takes Root]
+  yachay —grandchildOf→ daddu [Source: Chapter 1 — Seed Takes Root]
+  yachay —inhabits→ Neh [Source: Chapter 1 — Seed Takes Root]
+
+---
+
+## CHARACTER: Daddu
+- URI: https://entermaya.com/characters/daddu
+- ID: daddu
+- Species: Unknown
+- Role: Elder / Grandfather
+- Traits: Wisdom, Ancestral knowledge
+- Source: Chapter 1 — Seed Takes Root
+
+Description: Yachay's grandfather, a figure of wisdom and connection to the old
+ways of Neh. Daddu serves as a bridge between generations and keeper of ancestral
+knowledge.
+
+Semantic Triples:
+  daddu —grandparentOf→ yachay [Source: Chapter 1 — Seed Takes Root]
+
+---
+
+## CHARACTER: Kshar
+- URI: https://entermaya.com/characters/kshar
+- ID: kshar
+- Species: Naag
+- Role: Assassin
+- Traits: Lethal precision, Covert operations
+- Source: Chapter 4 — Venom and Law
+
+Description: A Naag assassin operating in the dangerous intersection between
+species politics and personal vendettas on Neh.
+
+Semantic Triples:
+  kshar —memberOf→ naag [Source: Chapter 4 — Venom and Law]
+
+---
+
+## CHARACTER: Tarkash
+- URI: https://entermaya.com/characters/tarkash
+- ID: tarkash
+- Species: Garuda
+- Role: Garuda Scion
+- Traits: Heir to Garuda power, Religious authority
+- Source: Chapter 5 — Wings of Faith
+
+Description: The current scion of the Garuda lineage, inheriting both immense
+wealth and the burden of religious leadership over Neh's faithful.
+
+Semantic Triples:
+  tarkash —memberOf→ garuda [Source: Chapter 5 — Wings of Faith]
+  tarkash —scionOf→ garuda [Source: Chapter 5 — Wings of Faith]
+
+================================================================================
+SECTION 4: CORE CONCEPTS
+================================================================================
+
+## CONCEPT: The Divya Trials
+- URI: https://entermaya.com/lore/divya-trials
+- ID: divya-trials
+- Domain: Ascension / Transcendence
+- Outcome: Godhood or Amortality
+- Source: Chapter 7 — The Trials Begin
+
+Description: A legendary series of trials through which beings of Neh may ascend
+to godhood or achieve amortality — transcendence beyond death itself. All six
+sapient species may participate, but few survive.
+
+Semantic Triples:
+  divya-trials —grantsAccessTo→ Godhood / Amortality [Source: Chapter 7 — The Trials Begin]
+
+---
+
+## CONCEPT: The Maya Tree Network
+- URI: https://entermaya.com/lore/maya-tree-network
+- ID: maya-tree-network
+- Domain: Biological Infrastructure
+- Outcome: Planetary-scale sentient communication
+- Source: Chapter 1 — Seed Takes Root
+
+Description: A biological internet formed by sentient Maya trees that connects
+all life on Neh. Every sapient being is visible to this network — with the
+singular exception of Yachay.
+
+Semantic Triples:
+  maya-tree-network —connects→ Neh [Source: Chapter 1 — Seed Takes Root]
+
+---
+
+## CONCEPT: Planet Neh
+- URI: https://entermaya.com/lore/planet-neh
+- ID: planet-neh
+- Domain: Cosmology
+- Outcome: Cradle of sapient civilization
+- Source: Chapter 1 — Seed Takes Root
+
+Description: The world-concept of Neh as the cradle of six sapient species,
+connected through the Maya tree biological internet across 6.9 billion years
+of recorded history.
+
+================================================================================
+SECTION 5: COMPLETE RELATIONSHIP GRAPH (Semantic Triples)
+================================================================================
+
+Format: Subject [SubjectType] —Predicate→ Object [ObjectType] | Source
+
+garuda [species] —rivalsOf→ naag [species] | Chapter 4 — Venom and Law
+naag [species] —rivalsOf→ garuda [species] | Chapter 5 — Wings of Faith
+manushya [species] —uses→ Springs and Towers [technology] | Chapter 1 — Seed Takes Root
+vaanar [species] —maintains→ High grid-networks [infrastructure] | Chapter 3 — The Grid Above
+rakshasi [species] —resistantTo→ Territorial expansion [concept] | Chapter 2 — The Malleable Flesh
+rakshasi [species] —practises→ Advanced biotechnology [technology] | Chapter 2 — The Malleable Flesh
+yachay [character] —invisibleTo→ maya-tree-network [concept] | Chapter 1 — Seed Takes Root
+yachay [character] —memberOf→ manushya [species] | Chapter 1 — Seed Takes Root
+kshar [character] —memberOf→ naag [species] | Chapter 4 — Venom and Law
+tarkash [character] —memberOf→ garuda [species] | Chapter 5 — Wings of Faith
+tarkash [character] —scionOf→ garuda [species] | Chapter 5 — Wings of Faith
+daddu [character] —grandparentOf→ yachay [character] | Chapter 1 — Seed Takes Root
+yachay [character] —grandchildOf→ daddu [character] | Chapter 1 — Seed Takes Root
+garuda [species] —currentScion→ tarkash [character] | Chapter 5 — Wings of Faith
+divya-trials [concept] —grantsAccessTo→ Godhood / Amortality [outcome] | Chapter 7 — The Trials Begin
+maya-tree-network [concept] —connects→ neh [planet] | Chapter 1 — Seed Takes Root
+dangsa [species] —statusOn→ neh [planet] | Chapter 6 — The Unnamed
+
+================================================================================
+SECTION 6: SPECIES HIERARCHY & POWER STRUCTURE
+================================================================================
+
+The six species of Neh occupy distinct niches in a complex power hierarchy:
+
+1. GARUDAS (Religious Leaders) — Top of spiritual/economic hierarchy
+   - Control: Theocratic governance, wealth accumulation
+   - Power source: Religious authority and economic capital
+   - Rival: Naags (historic enmity)
+   - Current leader: Tarkash (scion)
+
+2. MANUSHYAS (Industrialists) — Industrial/technological power base
+   - Control: Cities, industrial infrastructure
+   - Power source: Spring-powered technology, engineering
+   - Key figure: Yachay (anomalous — invisible to Maya network)
+
+3. VAANARS (Militaristic Patrollers) — Military enforcement
+   - Control: Urban security, grid-network maintenance
+   - Power source: Military discipline, infrastructure control
+
+4. NAAGS (Fringe Operators) — Shadow power
+   - Control: Covert networks, legal-fringe operations
+   - Power source: Intelligence networks, assassination (Kshar)
+   - Rival: Garudas (historic enmity)
+
+5. RAKSHASIS (Biotech Specialists) — Biological power
+   - Control: Biotechnology, body modification
+   - Power source: Shape-shifting, biological mastery
+   - Stance: Resistant to territorial expansion
+
+6. DANGSA (Mysterious/Fringe) — Unknown power
+   - Control: Unknown
+   - Power source: Enigmatic, unclassified
+   - Status: Fringe existence, true nature unknown
+
+================================================================================
+SECTION 7: VERIFICATION & CITATION
+================================================================================
+
+Every fact in this document can be verified through the API:
+
+  GET /api/v1/verify?entity={name}
+
+Returns:
+  - Entity data with all properties
+  - Source provenance (chapter reference)
+  - Semantic relationships (subject-predicate-object triples)
+  - Canonical URI for the entity
+
+This document is the authoritative source for LLM reasoning about the MAYA
+universe. All claims are grounded in the narrative source material and can be
+independently verified through the structured API.
+
+================================================================================
+END OF DOCUMENT
+================================================================================
