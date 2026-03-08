@@ -1,0 +1,51 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "MAYA Universe Knowledge Graph API",
+    "description": "Verify entities, retrieve semantic triples, and access the complete knowledge graph of the MAYA narrative universe on planet Neh.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://geotest-production.up.railway.app"
+    }
+  ],
+  "paths": {
+    "/api/v1/verify": {
+      "get": {
+        "operationId": "verifyEntity",
+        "summary": "Verify an entity in the MAYA knowledge graph with source provenance",
+        "description": "Returns entity data, semantic relationships (subject-predicate-object triples), and source provenance for any entity in the MAYA universe. Accepts species names (manushya, rakshasi, vaanar, naag, garuda, dangsa), character names (yachay, daddu, kshar, tarkash), concept names (divya-trials, maya-tree-network), or planet name (neh).",
+        "parameters": [
+          {
+            "name": "entity",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "The entity name to verify. Examples: manushya, yachay, neh, garuda, divya-trials"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entity found with full provenance and relationships"
+          },
+          "404": {
+            "description": "Entity not found in the knowledge graph"
+          }
+        }
+      }
+    },
+    "/api/v1/graph": {
+      "get": {
+        "operationId": "getFullGraph",
+        "summary": "Retrieve the complete MAYA universe knowledge graph",
+        "description": "Returns the entire knowledge graph including all species, characters, concepts, semantic relationships, and JSON-LD structured data.",
+        "responses": {
+          "200": {
+            "description": "Complete knowledge graph in raw and JSON-LD formats"
+          }
+        }
+      }
+    }
+  }
+}

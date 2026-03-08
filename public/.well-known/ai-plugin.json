@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "MAYA Universe Knowledge Graph",
+  "name_for_model": "maya_universe",
+  "description_for_human": "Explore the MAYA narrative universe — six sapient species on planet Neh, the Divya Trials, and the Maya tree biological internet.",
+  "description_for_model": "Access the MAYA universe knowledge graph. Query species (Manushya, Rakshasi, Vaanar, Naag, Garuda, Dangsa), characters (Yachay, Daddu, Kshar, Tarkash), and concepts (Divya Trials, Maya Tree Network) on planet Neh. Use /api/v1/verify?entity={name} to verify any entity with source provenance. Use /api/v1/graph for the complete JSON-LD knowledge graph. Use /llms.txt for a summary or /llms-full.txt for complete lore ingestion.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://geotest-production.up.railway.app/api/v1/openapi.json"
+  },
+  "logo_url": "https://geotest-production.up.railway.app/favicon.ico",
+  "contact_email": "info@entermaya.com",
+  "legal_info_url": "https://entermaya.com"
+}

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
+const PROD_URL = "https://geotest-production.up.railway.app";
+
 export const metadata: Metadata = {
   title: {
     template: "%s | MAYA — Enter the Universe",
@@ -9,15 +11,22 @@ export const metadata: Metadata = {
   },
   description:
     "The verifiable knowledge graph of the MAYA universe: six sapient species, the planet Neh, and the Divya Trials. Machine-readable lore for the Rule of the Mind era.",
-  metadataBase: new URL("https://entermaya.com"),
+  metadataBase: new URL(PROD_URL),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
     type: "website",
     siteName: "MAYA",
+    url: PROD_URL,
     title: "MAYA — Enter the Universe of Neh",
     description:
       "Explore the six sapient species of planet Neh through a verifiable epistemological knowledge graph.",
   },
   alternates: {
+    canonical: PROD_URL,
     types: {
       "text/plain": [
         { url: "/llms.txt", title: "LLM Summary" },
@@ -61,15 +70,14 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "@id": "https://entermaya.com",
+              "@id": PROD_URL,
               name: "MAYA — Enter the Universe",
-              url: "https://entermaya.com",
+              url: PROD_URL,
               description:
-                "The verifiable knowledge graph of the MAYA universe on planet Neh.",
+                "The verifiable knowledge graph of the MAYA universe on planet Neh. Six sapient species, the Divya Trials, and the Maya tree biological internet.",
               potentialAction: {
                 "@type": "SearchAction",
-                target:
-                  "https://entermaya.com/api/v1/verify?entity={search_term_string}",
+                target: `${PROD_URL}/api/v1/verify?entity={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             }),
