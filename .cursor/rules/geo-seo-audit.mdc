@@ -1,0 +1,104 @@
+---
+description: GEO + SEO discoverability audit system for entermaya.com properties
+alwaysApply: true
+---
+
+# GEO + SEO Audit System for MAYA / entermaya.com
+
+When working on any entermaya.com property (test.entermaya.com, ai.entermaya.com, entermaya.com), enforce these checks before every deploy or push.
+
+## Source Truth
+
+All content MUST trace to https://entermaya.com. Never invent, paraphrase, or embellish lore. If a fact cannot be sourced to entermaya.com, it does not belong on the site.
+
+## Crawlability Checks
+
+Before pushing, verify:
+
+1. `/robots.txt` exists with `Allow: /` for these user-agents: `*`, `Googlebot`, `Bingbot`, `GPTBot`, `ChatGPT-User`, `ClaudeBot`, `anthropic-ai`, `PerplexityBot`, `Google-Extended`, `Bytespider`
+2. `Sitemap:` directive in robots.txt points to correct domain
+3. `/sitemap.xml` is dynamic and lists ALL public pages
+4. Google verification file exists in `/public/`
+
+## SEO Checks
+
+Every page must have:
+
+1. Unique `<title>` (via `generateMetadata`)
+2. Unique `<meta name="description">`
+3. Canonical URL via `alternates.canonical`
+4. `<html lang="en">`
+5. `robots: { index: true, follow: true }` in root metadata
+6. Open Graph tags: `og:type`, `og:title`, `og:description`, `og:url`, `og:site_name`
+7. Single `<h1>` per page, proper heading hierarchy
+8. Semantic HTML: `<article>`, `<section>`, `<header>`, `<nav>`, `<main>`, `<footer>`
+9. ARIA landmarks: `role="banner"`, `role="contentinfo"`, `aria-label` on navigations
+10. Internal cross-links between all entity types
+
+## GEO Checks (Generative Engine Optimization)
+
+### LLM Discovery
+
+1. `/llms.txt` — structured markdown summary, `>` block intro, `##` sections
+2. `/llms-full.txt` — complete dump for 1M+ token context windows
+3. `<link rel="alternate" type="text/plain" href="/llms.txt">` in `<head>`
+4. `<link rel="alternate" type="text/plain" href="/llms-full.txt">` in `<head>`
+5. Both linked in site footer for crawler visibility
+
+### JSON-LD Structured Data
+
+Every page must inject `<script type="application/ld+json">` with:
+
+1. Root: `@type: WebSite` with `SearchAction` pointing to verify API
+2. Species pages: `@type: Thing` with `@id` URI, `additionalType`, `isPartOf` → Neh
+3. Character pages: `@type: Person` with `@id`, `memberOf` → species, `homeLocation` → Neh
+4. Concept pages: `@type: Thing` with `@id`, `additionalType`
+5. Planet page: `@type: Place` with `containsPlace` listing all species
+
+All `@id` values must be resolvable URLs: `https://{domain}/species/{slug}`
+
+### Answer-First CSS
+
+1. Primary definition wrapped in `.llm-grounding-point` class (gold left border)
+2. `data-definition="true"` on the authoritative definition element
+3. `data-provenance="{source}"` on every entity container
+4. `data-entity-type` and `data-entity-id` on article wrappers
+5. Definition appears as FIRST paragraph after `<h1>` — never buried
+
+### Verification API
+
+1. `GET /api/v1/verify?entity={name}` returns entity + provenance + relationships
+2. `GET /api/v1/graph` returns complete JSON-LD knowledge graph
+3. Every response includes `provenance` field tracing to entermaya.com
+4. 404 responses include hint with valid entity names
+5. `_links` object for HATEOAS discoverability
+
+### Machine Discovery Files
+
+1. `/.well-known/ai-plugin.json` — OpenAI plugin discovery
+2. `/api/v1/openapi.json` — OpenAPI 3.1 spec for tool-use LLMs
+
+## Performance
+
+1. All pages SSR/SSG — no client-side fetching for content
+2. First Load JS < 110kB
+3. TTFB target < 200ms (static HTML)
+4. Content readable without JavaScript execution
+
+## Pre-Deploy Validation
+
+Run `npx next build` and confirm:
+- All pages generate without errors
+- Route count matches expected (species + characters + lore + atlas + home + API)
+- No type errors
+
+## Post-Deploy Validation
+
+After deploying to production domain:
+1. Fetch `/robots.txt` — confirm correct domain in Sitemap
+2. Fetch `/sitemap.xml` — confirm all pages listed with correct URLs
+3. Fetch `/llms.txt` — confirm readable, structured, sourced
+4. Fetch `/api/v1/verify?entity=yachay` — confirm JSON with provenance
+5. Fetch `/api/v1/graph` — confirm complete graph
+6. Check `view-source:` on any page — confirm JSON-LD in `<head>`
+7. Google: `site:{domain}` — monitor indexing progress
