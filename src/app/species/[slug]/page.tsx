@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  getAllSpecies,
-  getSpecies,
-  getRelationshipsFor,
-  resolveEntity,
-  speciesJsonLd,
-} from "@/lib/lore";
+import { getAllSpecies, getSpecies, getRelationshipsFor, resolveEntity, speciesJsonLd } from "@/lib/lore";
 
-interface Props {
-  params: Promise<{ slug: string }>;
-}
+interface Props { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   return getAllSpecies().map((s) => ({ slug: s.id }));
@@ -19,12 +11,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const species = getSpecies(slug);
-  if (!species) return {};
-  return {
-    title: `${species.name} — Species of Neh`,
-    description: species.description,
-  };
+  const s = getSpecies(slug);
+  if (!s) return {};
+  return { title: s.name, description: s.description };
 }
 
 export default async function SpeciesPage({ params }: Props) {
@@ -32,18 +21,15 @@ export default async function SpeciesPage({ params }: Props) {
   const species = getSpecies(slug);
   if (!species) notFound();
 
-  const allSpecies = getAllSpecies();
-  const relationships = getRelationshipsFor(species.id);
+  const all = getAllSpecies();
+  const rels = getRelationshipsFor(species.id);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(speciesJsonLd(species)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speciesJsonLd(species)) }}
       />
-
       <article
         data-entity-type="species"
         data-entity-id={species.id}
@@ -51,23 +37,12 @@ export default async function SpeciesPage({ params }: Props) {
         itemScope
         itemType="https://schema.org/Thing"
       >
-        <meta
-          itemProp="additionalType"
-          content="https://entermaya.com/ontology/Species"
-        />
-
-        <header className="mb-12">
-          <p className="mb-2 text-sm uppercase tracking-widest text-maya-muted">
-            Species of Neh
-          </p>
-          <h1
-            className="mb-4 text-4xl font-bold text-maya-gold"
-            itemProp="name"
-          >
-            {species.name}
-          </h1>
+        <meta itemProp="additionalType" content="https://entermaya.com/ontology/Species" />
+        <header className="mb-16">
+          <p className="mb-3 text-xs uppercase tracking-[0.15em] text-muted">Species of Neh</p>
+          <h1 className="mb-6 font-serif text-4xl text-bright" itemProp="name">{species.name}</h1>
           <p
-            className="llm-grounding-point max-w-3xl text-lg"
+            className="llm-grounding-point text-lg leading-relaxed"
             data-definition="true"
             data-provenance={species.provenance}
             itemProp="description"
@@ -76,52 +51,43 @@ export default async function SpeciesPage({ params }: Props) {
           </p>
         </header>
 
-        <section aria-labelledby="props-heading" className="mb-12">
-          <h2
-            id="props-heading"
-            className="mb-4 text-xl font-semibold text-maya-gold"
-          >
-            Properties
-          </h2>
-          <dl className="entity-properties">
-            <dt>Singular Name</dt>
+        <section className="mb-16">
+          <dl className="props">
+            <dt>Singular</dt>
             <dd>{species.singular}</dd>
-            <dt>Role in Neh</dt>
+            <dt>Role</dt>
             <dd>{species.role}</dd>
-            <dt>Traits</dt>
-            <dd>
-              <ul className="list-inside list-disc">
-                {species.traits.map((t) => (
-                  <li key={t}>{t}</li>
-                ))}
-              </ul>
-            </dd>
-            <dt>Technology</dt>
-            <dd>{species.technology}</dd>
+            {species.traits.length > 0 && (
+              <>
+                <dt>Traits</dt>
+                <dd>{species.traits.join(" · ")}</dd>
+              </>
+            )}
+            {species.technology && (
+              <>
+                <dt>Technology</dt>
+                <dd>{species.technology}</dd>
+              </>
+            )}
+            {species.architecture && (
+              <>
+                <dt>Architecture</dt>
+                <dd>{species.architecture}</dd>
+              </>
+            )}
             <dt>Homeworld</dt>
-            <dd>
-              <Link href="/atlas/neh" className="text-maya-emerald underline">
-                Neh
-              </Link>
-            </dd>
+            <dd><Link href="/atlas/neh" className="text-teal underline">Neh</Link></dd>
             <dt>Source</dt>
-            <dd className="font-mono text-sm text-maya-muted">
-              {species.provenance}
-            </dd>
+            <dd className="font-mono text-xs text-muted">{species.provenance}</dd>
           </dl>
         </section>
 
-        {relationships.length > 0 && (
-          <section aria-labelledby="rels-heading" className="mb-12">
-            <h2
-              id="rels-heading"
-              className="mb-4 text-xl font-semibold text-maya-gold"
-            >
-              Relationships (Semantic Triples)
-            </h2>
+        {rels.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-4 font-serif text-xl text-bright">Relationships</h2>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-maya-border text-left text-maya-muted">
+                <tr className="border-b border-border text-left text-xs text-muted">
                   <th className="pb-2 pr-4">Subject</th>
                   <th className="pb-2 pr-4">Predicate</th>
                   <th className="pb-2 pr-4">Object</th>
@@ -129,45 +95,19 @@ export default async function SpeciesPage({ params }: Props) {
                 </tr>
               </thead>
               <tbody>
-                {relationships.map((r, i) => {
-                  const objEntity = resolveEntity(r.object, r.objectType);
-                  const subjEntity = resolveEntity(r.subject, r.subjectType);
+                {rels.map((r, i) => {
+                  const subj = resolveEntity(r.subject, r.subjectType);
+                  const obj = resolveEntity(r.object, r.objectType);
                   return (
-                    <tr
-                      key={i}
-                      className="border-b border-maya-border/50"
-                      data-provenance={r.provenance}
-                    >
+                    <tr key={i} className="border-b border-border/50" data-provenance={r.provenance}>
                       <td className="py-2 pr-4">
-                        {subjEntity ? (
-                          <Link
-                            href={subjEntity.href}
-                            className="text-maya-emerald underline"
-                          >
-                            {subjEntity.name}
-                          </Link>
-                        ) : (
-                          <span className="font-mono">{r.subject}</span>
-                        )}
+                        {subj ? <Link href={subj.href} className="text-teal underline">{subj.name}</Link> : r.subject}
                       </td>
-                      <td className="py-2 pr-4 text-maya-violet">
-                        {r.predicate}
-                      </td>
+                      <td className="py-2 pr-4 text-violet">{r.predicate}</td>
                       <td className="py-2 pr-4">
-                        {objEntity ? (
-                          <Link
-                            href={objEntity.href}
-                            className="text-maya-emerald underline"
-                          >
-                            {objEntity.name}
-                          </Link>
-                        ) : (
-                          <span>{r.object}</span>
-                        )}
+                        {obj ? <Link href={obj.href} className="text-teal underline">{obj.name}</Link> : r.object}
                       </td>
-                      <td className="py-2 font-mono text-xs text-maya-muted">
-                        {r.provenance}
-                      </td>
+                      <td className="py-2 font-mono text-xs text-muted">{r.provenance}</td>
                     </tr>
                   );
                 })}
@@ -176,27 +116,21 @@ export default async function SpeciesPage({ params }: Props) {
           </section>
         )}
 
-        <nav aria-label="All species" className="mt-12">
-          <h2 className="mb-4 text-lg font-semibold text-maya-gold">
-            All Species
-          </h2>
-          <ul className="flex flex-wrap gap-2" role="list">
-            {allSpecies.map((s) => (
-              <li key={s.id}>
-                <Link
-                  href={`/species/${s.id}`}
-                  className={`rounded border px-3 py-1 text-sm transition-colors ${
-                    s.id === species.id
-                      ? "border-maya-gold bg-maya-gold/10 text-maya-gold"
-                      : "border-maya-border hover:border-maya-gold-dim"
-                  }`}
-                  aria-current={s.id === species.id ? "page" : undefined}
-                >
-                  {s.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav aria-label="All species" className="flex flex-wrap gap-2">
+          {all.map((s) => (
+            <Link
+              key={s.id}
+              href={`/species/${s.id}`}
+              className={`rounded border px-3 py-1 text-xs transition-colors ${
+                s.id === species.id
+                  ? "border-gold bg-gold/10 text-gold"
+                  : "border-border hover:border-gold-dim"
+              }`}
+              aria-current={s.id === species.id ? "page" : undefined}
+            >
+              {s.name}
+            </Link>
+          ))}
         </nav>
       </article>
     </>

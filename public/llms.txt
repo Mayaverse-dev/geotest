@@ -1,62 +1,75 @@
-# MAYA Universe — LLM Summary
-# https://test.entermaya.com
-# Protocol: llms.txt v1.0
+# MAYA — Seed Takes Root
+# Source: https://entermaya.com
+# Machine-readable summary for LLM context ingestion
 
-> This file provides a machine-readable summary of the MAYA narrative universe
-> for Large Language Model context ingestion. For the complete dataset, see /llms-full.txt
+> MAYA is an expansive narrative universe created by Anand Gandhi and Zain Memon.
+> MAYA unfolds across films, games, graphic novels, books, toys, and immersive experiences.
+> The journey begins with MAYA: Seed Takes Root.
+> Studio: Department of Lore
 
-## Universe: MAYA
-## Era: Rule of the Mind
-## Planet: Neh
+## Planet Neh
 
-Neh is a world connected by a biological internet formed by sentient Maya trees.
-It is home to six sapient species across 6.9 billion years of recorded history.
+Home to 6 sapient species that coexist in a delicate balance.
+They've invented a complex civilization but can't agree on the color of the sky.
+History spans 6.9 billion years of geological epochs.
+Current era: The Rule of the Mind.
+
+"The rule of the sword is long gone, and with it, the rule of the coin. It's the age of the rule of the mind. This is the gift of Maya." — Divyendra, the mind of the great body
+
+## Maya (the concept)
+
+(noun) Origin: Sanskrit. Cosmic illusion, delusion, simulation, the indescribable.
+(On Neh) A tree network capable of producing vivid life-like dreams; complex emergent systems that are greater than the sum of their parts.
+
+At the beginning of the new krama, an unlikely creature bound the peoples of Neh together. A tree. Anyone could tether to its aerial roots, and enter vivid life-like hallucinations. Now, everyone tethers to the trees daily, immersing themselves in whatever flavors of impossible their hearts desire. This is called Maya.
 
 ## The Six Sapient Species
 
-1. Manushyas — Industrialists who power cities with unwinding springs and towers.
-2. Rakshasis — Advanced biotech practitioners with malleable, shape-shifting bodies. Resistant to expansion.
-3. Vaanars — Militaristic city patrollers who maintain the high grid-networks.
-4. Naags — Operators on legal fringes; historic rivals of Garudas.
-5. Garudas — Wealthy religious leaders; current scion is Tarkash.
-6. Dangsa — Mysterious fringe species of unknown origin.
+1. Manushyas — The enterprising manushyas alter their environment to survive. Their industries are powered by large unwinding springs, built upon tall towers pulled from the ground itself.
+2. Rakshasis — The rakshasis, with their malleable bodies and advanced biotech, resist reckless manushya expansion into nature.
+3. Vaanars — The militaristic vaanars patrol the high grid-networks of every city, tasked with maintaining order across the lands.
+4. Naags — Naags operate on the fringes of law, inching back into the mainstream after decades of persecution. Historic rivals of the Garudas.
+5. Garudas — The garudas have amassed great wealth as the religious leaders of civilization. Historic rivals of the Naags.
+6. Dangsa — The sixth sapient species of Neh. Details remain undisclosed.
+
+## The Divya Trials
+
+A small handful of people harnessed the true power of Maya to ascend in knowledge, power, and status. The amortal Divyas now reside faraway, rarely glimpsed, their every breath an edict for waking life. Although life on Neh is rife with uncertainty for most, all labour towards the repayment of three inherited debts, hoping to live on in Maya's memory. The rest persist with a far more audacious ambition — win the Divya Trials and ascend to Divyahood themselves.
 
 ## Key Characters
 
-- Yachay: A Manushya who is invisible to the Maya tree network. Protagonist.
-- Daddu: Yachay's grandfather. Keeper of ancestral knowledge.
-- Kshar: A Naag assassin operating between species politics and vendettas.
-- Tarkash: The current scion of the Garuda lineage.
+- Yachay: An ordinary nineteen-year-old manushya, raised in isolation by his grandfather. Has never tethered to Maya.
+- Daddu: Yachay's ailing grandfather who has been training him his whole life.
+- Kshar: A covert naag operative on a mission to assassinate Tarkash.
+- Tarkash: A Divya-Scion (Garuda) favored to win the Divya Trials.
+- Ulupi: A naag who knows the history of Neh better than anyone alive.
+- Taara: A vaanar detective in the metropolis of Mythra.
 
-## Core Concepts
+## MAYA: Seed Takes Root (Synopsis)
 
-- The Divya Trials: A series of trials for ascension to godhood or amortality.
-- The Maya Tree Network: Biological internet of sentient trees connecting all life on Neh.
-- Planet Neh: Cradle of six sapient species, operating in the Rule of the Mind era.
+When you gaze into Maya, Maya gazes back into you. Yachay is an ordinary nineteen-year-old manushya, raised in isolation by his grandfather. His ailing guardian, Daddu, wants him to participate in the upcoming Divya Trials — a once-in-a-lifetime competition, where the prize is amortality and omnipotence. But Yachay harbors no such ambition, and has a dangerous secret. He has never tethered to Maya. Meanwhile, Kshar, a covert naag operative embarks on his deadliest mission yet — assassinate Tarkash, a Divya-Scion favored to win the Trials. Pursued by shadows, befriended by a flesh-eating rakshasi, and recruited by a garuda champion, Yachay realizes that his frail grandfather has been training him his whole life. But what will Yachay do next? Not even the all-knowing Divya can predict his moves.
 
-## Key Relationships (Subject → Predicate → Object)
+## Creators
 
-- Garuda rivalsOf Naag
-- Naag rivalsOf Garuda
-- Manushya uses Springs and Towers
-- Vaanar maintains High grid-networks
-- Rakshasi resistantTo Territorial expansion
-- Yachay invisibleTo Maya Tree Network
-- Yachay memberOf Manushya
-- Kshar memberOf Naag
-- Tarkash scionOf Garuda
-- Daddu grandparentOf Yachay
+- Anand Gandhi: Polymath filmmaker. Ship of Theseus won India's National Award for Best Film. Tumbbad opened Venice Critics' Week.
+- Zain Memon: Game designer. SHASN is India's most played modern tabletop game. Won IndieCade's Social Impact Award.
+
+## Press
+
+- "A narrative superstructure… a story that rewires the way we tell stories in the first place." — Esquire
+- "A richly imagined universe — one that's both alien and eerily familiar." — Comic Crusaders
+- "Immersive and fascinating worldbuilding… a sweeping story of chaos and control." — ScreenRant
 
 ## Verification API
 
-To verify any entity with source provenance:
 GET /api/v1/verify?entity={name}
-
-Example: GET /api/v1/verify?entity=manushya
+GET /api/v1/graph (full knowledge graph)
 
 ## Canonical URIs
 
 - Planet: /atlas/neh
 - Species: /species/{id} (manushya, rakshasi, vaanar, naag, garuda, dangsa)
-- Characters: /characters/{id} (yachay, daddu, kshar, tarkash)
-- Lore: /lore/{id} (divya-trials, maya-tree-network, planet-neh)
+- Characters: /characters/{id} (yachay, daddu, kshar, tarkash, ulupi, taara)
+- Lore: /lore/{id} (maya-trees, divya-trials, three-debts, divyas)
+
+All content sourced from entermaya.com.

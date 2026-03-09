@@ -1,130 +1,156 @@
 import Link from "next/link";
-import { getAllSpecies, getAllCharacters, getAllConcepts, getPlanet } from "@/lib/lore";
+import {
+  getAllSpecies,
+  getAllCharacters,
+  getAllConcepts,
+  getAllWorks,
+  getAllReviews,
+  getPlanet,
+} from "@/lib/lore";
 
 export default function HomePage() {
   const planet = getPlanet();
   const species = getAllSpecies();
   const characters = getAllCharacters();
   const concepts = getAllConcepts();
+  const works = getAllWorks();
+  const reviews = getAllReviews();
 
   return (
     <article itemScope itemType="https://schema.org/WebPage">
-      <header className="mb-16 text-center">
-        <h1
-          className="mb-4 text-5xl font-bold tracking-tight text-maya-gold"
-          itemProp="headline"
-        >
-          The MAYA Universe
+      <header className="mb-20">
+        <p className="mb-3 text-xs uppercase tracking-[0.15em] text-muted">
+          An expansive narrative universe
+        </p>
+        <h1 className="mb-6 font-serif text-4xl font-normal text-bright" itemProp="headline">
+          MAYA: Seed Takes Root
         </h1>
         <p
-          className="llm-grounding-point mx-auto max-w-2xl text-lg text-maya-text"
-          data-provenance={planet.provenance}
+          className="llm-grounding-point text-lg leading-relaxed"
           data-definition="true"
+          data-provenance="entermaya.com"
           itemProp="description"
         >
-          Welcome to <strong>Neh</strong> — a world connected by a biological
-          internet formed by sentient Maya trees, home to six sapient species
-          across {planet.historySpan} of history in the{" "}
-          <em>{planet.era}</em> era.
+          MAYA is an expansive narrative universe created by{" "}
+          <strong className="text-bright">Anand Gandhi</strong> and{" "}
+          <strong className="text-bright">Zain Memon</strong>. MAYA unfolds across films,
+          games, graphic novels, books, toys, and immersive experiences. The journey
+          begins with MAYA: Seed Takes Root.
         </p>
       </header>
 
-      <section aria-labelledby="species-heading" className="mb-16">
-        <h2
-          id="species-heading"
-          className="mb-8 text-2xl font-semibold text-maya-gold"
-        >
-          The Six Sapient Species of Neh
+      <section aria-labelledby="neh-heading" className="mb-20">
+        <h2 id="neh-heading" className="mb-4 font-serif text-2xl text-bright">
+          Welcome to Planet Neh
         </h2>
-        <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
+        <p
+          className="llm-grounding-point leading-relaxed"
+          data-provenance="entermaya.com"
+        >
+          {planet.description}
+        </p>
+        <blockquote className="mt-8 border-l-2 border-gold-dim pl-5 text-sm italic text-muted">
+          &ldquo;{planet.eraQuote}&rdquo;
+          <footer className="mt-2 not-italic text-gold-dim">
+            — {planet.eraQuoteAttribution}
+          </footer>
+        </blockquote>
+      </section>
+
+      <section aria-labelledby="species-heading" className="mb-20">
+        <h2 id="species-heading" className="mb-6 font-serif text-2xl text-bright">
+          The Six Sapient Species
+        </h2>
+        <div className="space-y-4">
           {species.map((s) => (
-            <li key={s.id}>
-              <Link
-                href={`/species/${s.id}`}
-                className="block rounded-lg border border-maya-border bg-maya-deep p-5 transition-colors hover:border-maya-gold-dim"
-                data-entity-type="species"
-                data-entity-id={s.id}
-              >
-                <h3 className="mb-1 font-semibold text-maya-text">{s.name}</h3>
-                <p className="text-sm text-maya-muted">{s.role}</p>
-                <p
-                  className="mt-2 text-sm leading-relaxed"
-                  data-provenance={s.provenance}
-                >
-                  {s.description.split(".")[0]}.
-                </p>
-              </Link>
-            </li>
+            <Link
+              key={s.id}
+              href={`/species/${s.id}`}
+              className="block border-b border-border pb-4 transition-colors hover:border-gold-dim"
+              data-entity-type="species"
+              data-entity-id={s.id}
+              data-provenance={s.provenance}
+            >
+              <span className="text-bright">{s.name}</span>
+              <span className="mx-2 text-muted">—</span>
+              <span className="text-sm text-muted">{s.description}</span>
+            </Link>
           ))}
-        </ol>
+        </div>
       </section>
 
-      <section aria-labelledby="characters-heading" className="mb-16">
-        <h2
-          id="characters-heading"
-          className="mb-8 text-2xl font-semibold text-maya-gold"
-        >
-          Key Characters
+      <section aria-labelledby="synopsis-heading" className="mb-20">
+        <h2 id="synopsis-heading" className="mb-4 font-serif text-2xl text-bright">
+          MAYA: Seed Takes Root
         </h2>
-        <ul className="grid gap-4 sm:grid-cols-2" role="list">
+        <p
+          className="llm-grounding-point leading-relaxed"
+          data-provenance="entermaya.com — MAYA: Seed Takes Root synopsis"
+        >
+          {works[0].synopsis}
+        </p>
+      </section>
+
+      <section aria-labelledby="characters-heading" className="mb-20">
+        <h2 id="characters-heading" className="mb-6 font-serif text-2xl text-bright">
+          Characters
+        </h2>
+        <div className="grid gap-3 sm:grid-cols-2">
           {characters.map((c) => (
-            <li key={c.id}>
-              <Link
-                href={`/characters/${c.id}`}
-                className="block rounded-lg border border-maya-border bg-maya-deep p-5 transition-colors hover:border-maya-gold-dim"
-                data-entity-type="character"
-                data-entity-id={c.id}
-              >
-                <h3 className="mb-1 font-semibold text-maya-text">{c.name}</h3>
-                <p className="text-sm text-maya-muted">{c.role}</p>
-              </Link>
-            </li>
+            <Link
+              key={c.id}
+              href={`/characters/${c.id}`}
+              className="rounded border border-border bg-deep p-4 transition-colors hover:border-gold-dim"
+              data-entity-type="character"
+              data-entity-id={c.id}
+            >
+              <p className="font-medium text-bright">{c.name}</p>
+              <p className="mt-1 text-xs text-muted">{c.role}</p>
+            </Link>
           ))}
-        </ul>
+        </div>
       </section>
 
-      <section aria-labelledby="concepts-heading" className="mb-16">
-        <h2
-          id="concepts-heading"
-          className="mb-8 text-2xl font-semibold text-maya-gold"
-        >
-          Core Concepts
+      <section aria-labelledby="concepts-heading" className="mb-20">
+        <h2 id="concepts-heading" className="mb-6 font-serif text-2xl text-bright">
+          Lore
         </h2>
-        <ul className="grid gap-4 sm:grid-cols-3" role="list">
+        <div className="space-y-3">
           {concepts.map((c) => (
-            <li key={c.id}>
-              <Link
-                href={`/lore/${c.id}`}
-                className="block rounded-lg border border-maya-border bg-maya-deep p-5 transition-colors hover:border-maya-gold-dim"
-                data-entity-type="concept"
-                data-entity-id={c.id}
-              >
-                <h3 className="mb-1 font-semibold text-maya-text">{c.name}</h3>
-                <p className="text-sm text-maya-muted">{c.domain}</p>
-              </Link>
-            </li>
+            <Link
+              key={c.id}
+              href={`/lore/${c.id}`}
+              className="block border-b border-border pb-3 transition-colors hover:border-gold-dim"
+              data-entity-type="concept"
+              data-entity-id={c.id}
+            >
+              <span className="text-bright">{c.name}</span>
+              <span className="mx-2 text-muted">—</span>
+              <span className="text-sm text-muted">{c.definition}</span>
+            </Link>
           ))}
-        </ul>
+        </div>
       </section>
 
-      <aside
-        aria-label="Machine-readable endpoints"
-        className="rounded-lg border border-maya-border bg-maya-surface p-6 text-sm"
-      >
-        <h2 className="mb-3 font-semibold text-maya-gold">
-          Machine-Readable Endpoints
+      <section aria-labelledby="reviews-heading" className="mb-20">
+        <h2 id="reviews-heading" className="mb-6 font-serif text-2xl text-bright">
+          Press
         </h2>
-        <dl className="space-y-2">
-          <dt className="font-mono text-maya-muted">GET /llms.txt</dt>
-          <dd>Summary of the MAYA universe for LLM context windows</dd>
-          <dt className="font-mono text-maya-muted">GET /llms-full.txt</dt>
-          <dd>Complete lore dump — ingest the full 6.9 billion year history</dd>
-          <dt className="font-mono text-maya-muted">
-            GET /api/v1/verify?entity=&#123;name&#125;
-          </dt>
-          <dd>Verify any entity with source provenance</dd>
-        </dl>
-      </aside>
+        <div className="space-y-6">
+          {reviews.slice(0, 3).map((r, i) => (
+            <blockquote
+              key={i}
+              className="border-l-2 border-border pl-5"
+              data-provenance={r.provenance}
+            >
+              <p className="text-sm italic leading-relaxed">
+                &ldquo;{r.quote}&rdquo;
+              </p>
+              <footer className="mt-1 text-xs text-muted">— {r.source}</footer>
+            </blockquote>
+          ))}
+        </div>
+      </section>
     </article>
   );
 }

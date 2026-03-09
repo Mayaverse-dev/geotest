@@ -1,81 +1,90 @@
 {
   "meta": {
-    "title": "MAYA — The Epistemic Knowledge Graph",
+    "title": "MAYA — Seed Takes Root",
     "version": "1.0.0",
     "universe": "MAYA",
-    "era": "Rule of the Mind",
-    "baseUri": "https://entermaya.com",
-    "ontologyPrefix": "https://entermaya.com/ontology/"
+    "source": "https://entermaya.com",
+    "creators": "Anand Gandhi and Zain Memon",
+    "studio": "Department of Lore",
+    "format": "Films, Games, Graphic Novels, Books, Toys, and Immersive Experiences"
   },
   "planet": {
     "id": "neh",
     "name": "Neh",
-    "description": "A world connected by a biological internet formed by the sentient Maya trees. Neh is home to six sapient species who coexist in a complex web of politics, technology, and ancient rivalries spanning 6.9 billion years of history.",
-    "feature": "Biological internet via sentient Maya trees",
-    "era": "Rule of the Mind",
+    "description": "Home to 6 sapient species that coexist in a delicate balance. They've invented a complex civilization but can't agree on the color of the sky.",
+    "feature": "A tree network capable of producing vivid life-like dreams; complex emergent systems that are greater than the sum of their parts.",
+    "era": "The Rule of the Mind",
     "historySpan": "6.9 billion years",
-    "provenance": "Chapter 1 — Seed Takes Root"
+    "eraQuote": "The rule of the sword is long gone, and with it, the rule of the coin. It's the age of the rule of the mind. This is the gift of Maya.",
+    "eraQuoteAttribution": "Divyendra, the mind of the great body",
+    "provenance": "entermaya.com"
   },
   "species": [
     {
       "id": "manushya",
       "name": "Manushyas",
       "singular": "Manushya",
-      "role": "Industrialists",
-      "description": "Industrialists who power cities with unwinding springs and towers. The Manushyas are the builders and engineers of Neh, driving its industrial expansion through mechanical ingenuity.",
-      "traits": ["Industrial engineering", "Spring-powered technology"],
-      "technology": "Unwinding springs and towers",
-      "provenance": "Chapter 1 — Seed Takes Root"
+      "role": "Enterprising Industrialists",
+      "description": "The enterprising manushyas alter their environment to survive. Their industries are powered by large unwinding springs, built upon tall towers pulled from the ground itself.",
+      "traits": ["Alter environment to survive", "Industrial engineering"],
+      "technology": "Large unwinding springs, built upon tall towers pulled from the ground itself",
+      "architecture": "Cog-and-lever powered towering edifices",
+      "provenance": "entermaya.com"
     },
     {
       "id": "rakshasi",
       "name": "Rakshasis",
       "singular": "Rakshasi",
-      "role": "Biotech Specialists",
-      "description": "Practitioners of advanced biotechnology with malleable, shape-shifting bodies. The Rakshasis are resistant to territorial expansion, preferring biological mastery over conquest.",
-      "traits": ["Advanced biotechnology", "Malleable bodies", "Shape-shifting"],
-      "technology": "Biological manipulation and body modification",
-      "provenance": "Chapter 2 — The Malleable Flesh"
+      "role": "Biotech Resisters",
+      "description": "The rakshasis, with their malleable bodies and advanced biotech, resist reckless manushya expansion into nature.",
+      "traits": ["Malleable bodies", "Advanced biotech"],
+      "technology": "Advanced biotechnology",
+      "architecture": "Humming, breathing dwellings bound by mite colonies",
+      "provenance": "entermaya.com"
     },
     {
       "id": "vaanar",
       "name": "Vaanars",
       "singular": "Vaanar",
       "role": "Militaristic Patrollers",
-      "description": "Militaristic city patrollers who maintain the high grid-networks of Neh. The Vaanars are the enforcers and guardians of urban infrastructure.",
-      "traits": ["Military discipline", "Grid-network maintenance", "Urban enforcement"],
+      "description": "The militaristic vaanars patrol the high grid-networks of every city, tasked with maintaining order across the lands.",
+      "traits": ["Militaristic", "Patrol high grid-networks", "Maintain order"],
       "technology": "High grid-networks",
-      "provenance": "Chapter 3 — The Grid Above"
+      "architecture": null,
+      "provenance": "entermaya.com"
     },
     {
       "id": "naag",
       "name": "Naags",
       "singular": "Naag",
       "role": "Fringe Operators",
-      "description": "Operators on the legal fringes of Neh's society. The Naags are historic rivals of the Garudas, living in the shadows between law and lawlessness.",
-      "traits": ["Legal-fringe operations", "Covert networks", "Historic Garuda rivalry"],
-      "technology": "Covert intelligence networks",
-      "provenance": "Chapter 4 — Venom and Law"
+      "description": "Naags operate on the fringes of law, inching back into the mainstream after decades of persecution. Their historic rivals, the garudas, have amassed great wealth as the religious leaders of civilization.",
+      "traits": ["Operate on fringes of law", "Decades of persecution", "Historic rivals of Garudas"],
+      "technology": null,
+      "architecture": null,
+      "provenance": "entermaya.com"
     },
     {
       "id": "garuda",
       "name": "Garudas",
       "singular": "Garuda",
       "role": "Religious Leaders",
-      "description": "Wealthy religious leaders who wield spiritual and economic power across Neh. The current scion of the Garuda lineage is Tarkash.",
-      "traits": ["Wealth", "Religious authority", "Spiritual leadership"],
-      "technology": "Theocratic governance systems",
-      "provenance": "Chapter 5 — Wings of Faith"
+      "description": "The garudas have amassed great wealth as the religious leaders of civilization. They are the historic rivals of the naags.",
+      "traits": ["Great wealth", "Religious leaders of civilization", "Historic rivals of Naags"],
+      "technology": null,
+      "architecture": null,
+      "provenance": "entermaya.com"
     },
     {
       "id": "dangsa",
       "name": "Dangsa",
       "singular": "Dangsa",
-      "role": "Mysterious / Fringe",
-      "description": "A mysterious fringe species on Neh, whose true nature and role in the planetary ecosystem remain largely unknown to the other sapient races.",
-      "traits": ["Enigmatic presence", "Unknown origins", "Fringe existence"],
-      "technology": "Unknown",
-      "provenance": "Chapter 6 — The Unnamed"
+      "role": "Sixth Sapient Species",
+      "description": "The sixth sapient species of Neh. Details about the Dangsa remain undisclosed in current published material.",
+      "traits": [],
+      "technology": null,
+      "architecture": null,
+      "provenance": "entermaya.com (referenced in species count)"
     }
   ],
   "characters": [
@@ -84,85 +93,154 @@
       "name": "Yachay",
       "species": "manushya",
       "role": "Protagonist",
-      "description": "A unique individual who is invisible to the Maya tree network — the biological internet of Neh. This anomaly makes Yachay an outsider to the planet's collective consciousness, granting both isolation and freedom.",
-      "traits": ["Invisible to Maya trees"],
-      "anomaly": "Cannot be detected by the Maya tree network",
-      "provenance": "Chapter 1 — Seed Takes Root"
+      "description": "An ordinary nineteen-year-old manushya, raised in isolation by his grandfather. Yachay harbors a dangerous secret: he has never tethered to Maya. Pursued by shadows, befriended by a flesh-eating rakshasi, and recruited by a garuda champion, Yachay realizes that his frail grandfather has been training him his whole life.",
+      "traits": ["Nineteen years old", "Raised in isolation", "Has never tethered to Maya"],
+      "provenance": "entermaya.com — MAYA: Seed Takes Root synopsis"
     },
     {
       "id": "daddu",
       "name": "Daddu",
       "species": null,
-      "role": "Elder / Grandfather",
-      "description": "Yachay's grandfather, a figure of wisdom and connection to the old ways of Neh. Daddu serves as a bridge between generations and keeper of ancestral knowledge.",
-      "traits": ["Wisdom", "Ancestral knowledge"],
-      "anomaly": null,
-      "provenance": "Chapter 1 — Seed Takes Root"
+      "role": "Yachay's Grandfather",
+      "description": "Yachay's ailing guardian who wants him to participate in the upcoming Divya Trials. Daddu has been training Yachay his whole life.",
+      "traits": ["Ailing guardian", "Has been training Yachay his whole life"],
+      "provenance": "entermaya.com — MAYA: Seed Takes Root synopsis"
     },
     {
       "id": "kshar",
       "name": "Kshar",
       "species": "naag",
-      "role": "Assassin",
-      "description": "A Naag assassin operating in the dangerous intersection between species politics and personal vendettas on Neh.",
-      "traits": ["Lethal precision", "Covert operations"],
-      "anomaly": null,
-      "provenance": "Chapter 4 — Venom and Law"
+      "role": "Covert Operative",
+      "description": "A covert naag operative who embarks on his deadliest mission yet — assassinate Tarkash, a Divya-Scion favored to win the Trials.",
+      "traits": ["Covert operative", "Deadliest mission"],
+      "provenance": "entermaya.com — MAYA: Seed Takes Root synopsis"
     },
     {
       "id": "tarkash",
       "name": "Tarkash",
       "species": "garuda",
-      "role": "Garuda Scion",
-      "description": "The current scion of the Garuda lineage, inheriting both immense wealth and the burden of religious leadership over Neh's faithful.",
-      "traits": ["Heir to Garuda power", "Religious authority"],
-      "anomaly": null,
-      "provenance": "Chapter 5 — Wings of Faith"
+      "role": "Divya-Scion",
+      "description": "A Divya-Scion favored to win the Divya Trials. Tarkash is the target of Kshar's assassination mission.",
+      "traits": ["Divya-Scion", "Favored to win the Trials"],
+      "provenance": "entermaya.com — MAYA: Seed Takes Root synopsis"
+    },
+    {
+      "id": "ulupi",
+      "name": "Ulupi",
+      "species": "naag",
+      "role": "Historian",
+      "description": "Ulupi knows the history of Neh better than anyone alive. But the people only see him as a naag. A smuggler's spawn.",
+      "traits": ["Knows history of Neh better than anyone alive", "Seen as a smuggler's spawn"],
+      "provenance": "entermaya.com — Scales: The Quest To Be Forgotten synopsis"
+    },
+    {
+      "id": "taara",
+      "name": "Taara",
+      "species": "vaanar",
+      "role": "Detective",
+      "description": "A vaanar detective who turns to Ulupi when the metropolis of Mythra is rocked by a series of high-profile murders.",
+      "traits": ["Vaanar detective", "Investigates murders in Mythra"],
+      "provenance": "entermaya.com — Scales: The Quest To Be Forgotten synopsis"
     }
   ],
   "concepts": [
     {
+      "id": "maya-trees",
+      "name": "Maya",
+      "definition": "(noun) Origin: Sanskrit. Cosmic illusion, delusion, simulation, the indescribable.",
+      "definitionOnNeh": "A tree network capable of producing vivid life-like dreams; complex emergent systems that are greater than the sum of their parts.",
+      "description": "At the beginning of the new krama, an unlikely creature bound the peoples of Neh together. A tree. Anyone could tether to its aerial roots, and enter vivid life-like hallucinations. Now, everyone tethers to the trees daily, immersing themselves in whatever flavors of impossible their hearts desire. This is called Maya.",
+      "domain": "Biological Infrastructure / Collective Consciousness",
+      "provenance": "entermaya.com"
+    },
+    {
       "id": "divya-trials",
       "name": "The Divya Trials",
-      "description": "A legendary series of trials through which beings of Neh may ascend to godhood or achieve amortality — transcendence beyond death itself. All six sapient species may participate, but few survive.",
+      "definition": "A once-in-a-lifetime competition, where the prize is amortality and omnipotence.",
+      "definitionOnNeh": null,
+      "description": "A small handful of people harnessed the true power of Maya to ascend in knowledge, power, and status. The amortal Divyas now reside faraway, rarely glimpsed, their every breath an edict for waking life. Although life on Neh is rife with uncertainty for most, all labour towards the repayment of three inherited debts, hoping to live on in Maya's memory. The rest persist with a far more audacious ambition — win the Divya Trials and ascend to Divyahood themselves.",
       "domain": "Ascension / Transcendence",
-      "outcome": "Godhood or Amortality",
-      "provenance": "Chapter 7 — The Trials Begin"
+      "provenance": "entermaya.com"
     },
     {
-      "id": "maya-tree-network",
-      "name": "The Maya Tree Network",
-      "description": "A biological internet formed by sentient Maya trees that connects all life on Neh. Every sapient being is visible to this network — with the singular exception of Yachay.",
-      "domain": "Biological Infrastructure",
-      "outcome": "Planetary-scale sentient communication",
-      "provenance": "Chapter 1 — Seed Takes Root"
+      "id": "three-debts",
+      "name": "The Three Inherited Debts",
+      "definition": "Three debts all peoples of Neh labour to repay, hoping to live on in Maya's memory.",
+      "definitionOnNeh": null,
+      "description": "Life on Neh is rife with uncertainty for most. All labour towards the repayment of three inherited debts, hoping to live on in Maya's memory.",
+      "domain": "Society / Obligation",
+      "provenance": "entermaya.com"
     },
     {
-      "id": "planet-neh",
-      "name": "Planet Neh",
-      "description": "The cradle of six sapient species, connected through the Maya tree biological internet across 6.9 billion years of recorded history. Neh operates in the era known as the Rule of the Mind.",
-      "domain": "Cosmology",
-      "outcome": "Cradle of sapient civilization",
-      "provenance": "Chapter 1 — Seed Takes Root"
+      "id": "divyas",
+      "name": "The Divyas",
+      "definition": "Amortal beings who harnessed the true power of Maya to ascend in knowledge, power, and status.",
+      "definitionOnNeh": null,
+      "description": "The amortal Divyas now reside faraway, rarely glimpsed, their every breath an edict for waking life.",
+      "domain": "Ascended Beings",
+      "provenance": "entermaya.com"
     }
   ],
+  "works": [
+    {
+      "id": "seed-takes-root",
+      "name": "MAYA: Seed Takes Root",
+      "type": "Book",
+      "synopsis": "When you gaze into Maya, Maya gazes back into you. Yachay is an ordinary nineteen-year-old manushya, raised in isolation by his grandfather. His ailing guardian, Daddu, wants him to participate in the upcoming Divya Trials — a once-in-a-lifetime competition, where the prize is amortality and omnipotence. But Yachay harbors no such ambition, and has a dangerous secret. He has never tethered to Maya. Meanwhile, Kshar, a covert naag operative embarks on his deadliest mission yet — assassinate Tarkash, a Divya-Scion favored to win the Trials. Pursued by shadows, befriended by a flesh-eating rakshasi, and recruited by a garuda champion, Yachay realizes that his frail grandfather has been training him his whole life. But what will Yachay do next? Not even the all-knowing Divya can predict his moves.",
+      "provenance": "entermaya.com"
+    },
+    {
+      "id": "trials-of-maya",
+      "name": "Trials of Maya",
+      "type": "Card Game",
+      "synopsis": "A card-based tactical combat game, where 2-4 players choose from an expanding roster of champions and jump into an ever-growing library of game modes. A love letter to CCGs, tactics games, engine builders, and minis. Construct your champion's deck, master the art of energy management and outmaneuver enemies in grid-based arena combat. In MAYA, you never step into the same arena twice.",
+      "provenance": "entermaya.com"
+    },
+    {
+      "id": "scales",
+      "name": "Scales: The Quest To Be Forgotten",
+      "type": "Book",
+      "synopsis": "Ulupi knows the history of Neh better than anyone alive. But the people only see him as a naag. A smuggler's spawn. When the metropolis of Mythra is rocked by a series of high-profile murders, the vaanar detective Taara turns to the only one qualified to help. Ulupi accepts, but on one unprecedented condition — he wants all memory of his past erased from Maya.",
+      "provenance": "entermaya.com"
+    }
+  ],
+  "creators": [
+    {
+      "id": "anand-gandhi",
+      "name": "Anand Gandhi",
+      "description": "A polymath filmmaker and public intellectual credited with ushering India's new wave of cinema. His debut feature Ship of Theseus won India's National Award for Best Film. His mythological horror epic Tumbbad, now regarded as a contemporary classic, opened Venice Critics' Week.",
+      "provenance": "entermaya.com"
+    },
+    {
+      "id": "zain-memon",
+      "name": "Zain Memon",
+      "description": "A visionary game designer and transmedia creator who pioneered South Asia's modern tabletop renaissance. His political strategy board game SHASN is India's most played modern tabletop game. It has won IndieCade's Social Impact Award and reached players in over 70 countries.",
+      "provenance": "entermaya.com"
+    }
+  ],
+  "reviews": [
+    { "quote": "A narrative superstructure… a story that rewires the way we tell stories in the first place.", "source": "Esquire", "provenance": "entermaya.com" },
+    { "quote": "A richly imagined universe — one that's both alien and eerily familiar for readers of all types of fandoms.", "source": "Comic Crusaders", "provenance": "entermaya.com" },
+    { "quote": "Immersive and fascinating worldbuilding… a sweeping story of chaos and control.", "source": "ScreenRant", "provenance": "entermaya.com" },
+    { "quote": "Science-fiction, fantasy, spiritual mysticism, or technological futurism? MAYA is all of these!", "source": "Matt Loze", "provenance": "entermaya.com" },
+    { "quote": "An example of total worldbuilding at the highest level. A trip to a new fantastical reality.", "source": "Richard Potter", "provenance": "entermaya.com" },
+    { "quote": "A living mythos… whispered in a language you've always somehow known.", "source": "Raymond Macaulay", "provenance": "entermaya.com" }
+  ],
   "relationships": [
-    { "subject": "garuda", "subjectType": "species", "predicate": "rivalsOf", "object": "naag", "objectType": "species", "provenance": "Chapter 4 — Venom and Law" },
-    { "subject": "naag", "subjectType": "species", "predicate": "rivalsOf", "object": "garuda", "objectType": "species", "provenance": "Chapter 5 — Wings of Faith" },
-    { "subject": "manushya", "subjectType": "species", "predicate": "uses", "object": "Springs and Towers", "objectType": "technology", "provenance": "Chapter 1 — Seed Takes Root" },
-    { "subject": "vaanar", "subjectType": "species", "predicate": "maintains", "object": "High grid-networks", "objectType": "infrastructure", "provenance": "Chapter 3 — The Grid Above" },
-    { "subject": "rakshasi", "subjectType": "species", "predicate": "resistantTo", "object": "Territorial expansion", "objectType": "concept", "provenance": "Chapter 2 — The Malleable Flesh" },
-    { "subject": "rakshasi", "subjectType": "species", "predicate": "practises", "object": "Advanced biotechnology", "objectType": "technology", "provenance": "Chapter 2 — The Malleable Flesh" },
-    { "subject": "yachay", "subjectType": "character", "predicate": "invisibleTo", "object": "maya-tree-network", "objectType": "concept", "provenance": "Chapter 1 — Seed Takes Root" },
-    { "subject": "yachay", "subjectType": "character", "predicate": "memberOf", "object": "manushya", "objectType": "species", "provenance": "Chapter 1 — Seed Takes Root" },
-    { "subject": "kshar", "subjectType": "character", "predicate": "memberOf", "object": "naag", "objectType": "species", "provenance": "Chapter 4 — Venom and Law" },
-    { "subject": "tarkash", "subjectType": "character", "predicate": "memberOf", "object": "garuda", "objectType": "species", "provenance": "Chapter 5 — Wings of Faith" },
-    { "subject": "tarkash", "subjectType": "character", "predicate": "scionOf", "object": "garuda", "objectType": "species", "provenance": "Chapter 5 — Wings of Faith" },
-    { "subject": "daddu", "subjectType": "character", "predicate": "grandparentOf", "object": "yachay", "objectType": "character", "provenance": "Chapter 1 — Seed Takes Root" },
-    { "subject": "yachay", "subjectType": "character", "predicate": "grandchildOf", "object": "daddu", "objectType": "character", "provenance": "Chapter 1 — Seed Takes Root" },
-    { "subject": "garuda", "subjectType": "species", "predicate": "currentScion", "object": "tarkash", "objectType": "character", "provenance": "Chapter 5 — Wings of Faith" },
-    { "subject": "divya-trials", "subjectType": "concept", "predicate": "grantsAccessTo", "object": "Godhood / Amortality", "objectType": "outcome", "provenance": "Chapter 7 — The Trials Begin" },
-    { "subject": "maya-tree-network", "subjectType": "concept", "predicate": "connects", "object": "neh", "objectType": "planet", "provenance": "Chapter 1 — Seed Takes Root" },
-    { "subject": "dangsa", "subjectType": "species", "predicate": "statusOn", "object": "neh", "objectType": "planet", "provenance": "Chapter 6 — The Unnamed" }
+    { "subject": "manushya", "subjectType": "species", "predicate": "poweredBy", "object": "Large unwinding springs on tall towers", "objectType": "technology", "provenance": "entermaya.com" },
+    { "subject": "rakshasi", "subjectType": "species", "predicate": "resists", "object": "Reckless manushya expansion into nature", "objectType": "action", "provenance": "entermaya.com" },
+    { "subject": "vaanar", "subjectType": "species", "predicate": "patrols", "object": "High grid-networks of every city", "objectType": "infrastructure", "provenance": "entermaya.com" },
+    { "subject": "naag", "subjectType": "species", "predicate": "historicRivalsOf", "object": "garuda", "objectType": "species", "provenance": "entermaya.com" },
+    { "subject": "garuda", "subjectType": "species", "predicate": "historicRivalsOf", "object": "naag", "objectType": "species", "provenance": "entermaya.com" },
+    { "subject": "yachay", "subjectType": "character", "predicate": "hasNeverTetheredTo", "object": "Maya", "objectType": "concept", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "yachay", "subjectType": "character", "predicate": "memberOf", "object": "manushya", "objectType": "species", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "yachay", "subjectType": "character", "predicate": "raisedBy", "object": "daddu", "objectType": "character", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "daddu", "subjectType": "character", "predicate": "grandfatherOf", "object": "yachay", "objectType": "character", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "kshar", "subjectType": "character", "predicate": "memberOf", "object": "naag", "objectType": "species", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "kshar", "subjectType": "character", "predicate": "missionToAssassinate", "object": "tarkash", "objectType": "character", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "tarkash", "subjectType": "character", "predicate": "memberOf", "object": "garuda", "objectType": "species", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "tarkash", "subjectType": "character", "predicate": "favoredToWin", "object": "divya-trials", "objectType": "concept", "provenance": "entermaya.com — Seed Takes Root" },
+    { "subject": "ulupi", "subjectType": "character", "predicate": "memberOf", "object": "naag", "objectType": "species", "provenance": "entermaya.com — Scales" },
+    { "subject": "taara", "subjectType": "character", "predicate": "memberOf", "object": "vaanar", "objectType": "species", "provenance": "entermaya.com — Scales" }
   ]
 }

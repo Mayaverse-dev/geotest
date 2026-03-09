@@ -7,6 +7,8 @@ export interface Planet {
   feature: string;
   era: string;
   historySpan: string;
+  eraQuote: string;
+  eraQuoteAttribution: string;
   provenance: string;
 }
 
@@ -17,7 +19,8 @@ export interface Species {
   role: string;
   description: string;
   traits: string[];
-  technology: string;
+  technology: string | null;
+  architecture: string | null;
   provenance: string;
 }
 
@@ -28,16 +31,37 @@ export interface Character {
   role: string;
   description: string;
   traits: string[];
-  anomaly: string | null;
   provenance: string;
 }
 
 export interface Concept {
   id: string;
   name: string;
+  definition: string;
+  definitionOnNeh: string | null;
   description: string;
   domain: string;
-  outcome: string;
+  provenance: string;
+}
+
+export interface Work {
+  id: string;
+  name: string;
+  type: string;
+  synopsis: string;
+  provenance: string;
+}
+
+export interface Creator {
+  id: string;
+  name: string;
+  description: string;
+  provenance: string;
+}
+
+export interface Review {
+  quote: string;
+  source: string;
   provenance: string;
 }
 
@@ -49,8 +73,6 @@ export interface Relationship {
   objectType: string;
   provenance: string;
 }
-
-export type EntityType = "species" | "character" | "concept" | "planet";
 
 const BASE_URI = "https://test.entermaya.com";
 
@@ -80,6 +102,18 @@ export function getAllConcepts(): Concept[] {
 
 export function getConcept(slug: string): Concept | undefined {
   return (loreData.concepts as Concept[]).find((c) => c.id === slug);
+}
+
+export function getAllWorks(): Work[] {
+  return loreData.works as Work[];
+}
+
+export function getAllCreators(): Creator[] {
+  return loreData.creators as Creator[];
+}
+
+export function getAllReviews(): Review[] {
+  return loreData.reviews as Review[];
 }
 
 export function getRelationshipsFor(entityId: string): Relationship[] {
@@ -133,12 +167,7 @@ export function speciesJsonLd(s: Species) {
     description: s.description,
     additionalType: "https://entermaya.com/ontology/Species",
     identifier: s.id,
-    keywords: s.traits.join(", "),
-    isPartOf: {
-      "@type": "Place",
-      "@id": `${BASE_URI}/atlas/neh`,
-      name: "Neh",
-    },
+    isPartOf: { "@type": "Place", "@id": `${BASE_URI}/atlas/neh`, name: "Neh" },
   };
 }
 
@@ -151,12 +180,7 @@ export function characterJsonLd(c: Character) {
     description: c.description,
     additionalType: "https://entermaya.com/ontology/Character",
     identifier: c.id,
-    keywords: c.traits.join(", "),
-    homeLocation: {
-      "@type": "Place",
-      "@id": `${BASE_URI}/atlas/neh`,
-      name: "Neh",
-    },
+    homeLocation: { "@type": "Place", "@id": `${BASE_URI}/atlas/neh`, name: "Neh" },
   };
   if (c.species) {
     ld.memberOf = {
@@ -177,7 +201,6 @@ export function conceptJsonLd(c: Concept) {
     description: c.description,
     additionalType: "https://entermaya.com/ontology/Concept",
     identifier: c.id,
-    keywords: `${c.domain}, ${c.outcome}`,
   };
 }
 
@@ -190,7 +213,6 @@ export function planetJsonLd(p: Planet) {
     description: p.description,
     additionalType: "https://entermaya.com/ontology/Planet",
     identifier: p.id,
-    keywords: `${p.feature}, ${p.era}`,
     containsPlace: getAllSpecies().map((s) => ({
       "@type": "Thing",
       "@id": entityUri("species", s.id),
@@ -219,10 +241,14 @@ export function verifyEntity(
       return { found: true, entity: { type: "concept", ...c }, provenance: `Source: ${c.provenance}` };
     }
   }
+  for (const w of getAllWorks()) {
+    if (w.id === q || w.name.toLowerCase() === q) {
+      return { found: true, entity: { entityType: "work", ...w }, provenance: `Source: ${w.provenance}` };
+    }
+  }
   const planet = getPlanet();
   if (q === "neh" || q === "planet neh") {
     return { found: true, entity: { type: "planet", ...planet }, provenance: `Source: ${planet.provenance}` };
   }
-
   return { found: false };
 }

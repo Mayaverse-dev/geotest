@@ -1,17 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  getAllConcepts,
-  getConcept,
-  getRelationshipsFor,
-  resolveEntity,
-  conceptJsonLd,
-} from "@/lib/lore";
+import { getAllConcepts, getConcept, getRelationshipsFor, resolveEntity, conceptJsonLd } from "@/lib/lore";
 
-interface Props {
-  params: Promise<{ slug: string }>;
-}
+interface Props { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   return getAllConcepts().map((c) => ({ slug: c.id }));
@@ -19,12 +11,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  const concept = getConcept(slug);
-  if (!concept) return {};
-  return {
-    title: `${concept.name} — Lore of Neh`,
-    description: concept.description,
-  };
+  const c = getConcept(slug);
+  if (!c) return {};
+  return { title: c.name, description: c.description };
 }
 
 export default async function LorePage({ params }: Props) {
@@ -32,18 +21,15 @@ export default async function LorePage({ params }: Props) {
   const concept = getConcept(slug);
   if (!concept) notFound();
 
-  const allConcepts = getAllConcepts();
-  const relationships = getRelationshipsFor(concept.id);
+  const all = getAllConcepts();
+  const rels = getRelationshipsFor(concept.id);
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(conceptJsonLd(concept)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(conceptJsonLd(concept)) }}
       />
-
       <article
         data-entity-type="concept"
         data-entity-id={concept.id}
@@ -51,61 +37,43 @@ export default async function LorePage({ params }: Props) {
         itemScope
         itemType="https://schema.org/Thing"
       >
-        <meta
-          itemProp="additionalType"
-          content="https://entermaya.com/ontology/Concept"
-        />
-
-        <header className="mb-12">
-          <p className="mb-2 text-sm uppercase tracking-widest text-maya-muted">
-            Lore
-          </p>
-          <h1
-            className="mb-4 text-4xl font-bold text-maya-gold"
-            itemProp="name"
-          >
-            {concept.name}
-          </h1>
+        <meta itemProp="additionalType" content="https://entermaya.com/ontology/Concept" />
+        <header className="mb-16">
+          <p className="mb-3 text-xs uppercase tracking-[0.15em] text-muted">Lore</p>
+          <h1 className="mb-6 font-serif text-4xl text-bright" itemProp="name">{concept.name}</h1>
           <p
-            className="llm-grounding-point max-w-3xl text-lg"
+            className="llm-grounding-point text-lg leading-relaxed"
             data-definition="true"
             data-provenance={concept.provenance}
             itemProp="description"
           >
-            {concept.description}
+            {concept.definition}
           </p>
+          {concept.definitionOnNeh && (
+            <p className="mt-4 leading-relaxed text-muted">
+              <strong className="text-text">On Neh:</strong> {concept.definitionOnNeh}
+            </p>
+          )}
         </header>
 
-        <section aria-labelledby="props-heading" className="mb-12">
-          <h2
-            id="props-heading"
-            className="mb-4 text-xl font-semibold text-maya-gold"
-          >
-            Properties
-          </h2>
-          <dl className="entity-properties">
+        <section className="mb-16">
+          <p className="leading-relaxed" data-provenance={concept.provenance}>
+            {concept.description}
+          </p>
+          <dl className="props">
             <dt>Domain</dt>
             <dd>{concept.domain}</dd>
-            <dt>Outcome</dt>
-            <dd>{concept.outcome}</dd>
             <dt>Source</dt>
-            <dd className="font-mono text-sm text-maya-muted">
-              {concept.provenance}
-            </dd>
+            <dd className="font-mono text-xs text-muted">{concept.provenance}</dd>
           </dl>
         </section>
 
-        {relationships.length > 0 && (
-          <section aria-labelledby="rels-heading" className="mb-12">
-            <h2
-              id="rels-heading"
-              className="mb-4 text-xl font-semibold text-maya-gold"
-            >
-              Relationships (Semantic Triples)
-            </h2>
+        {rels.length > 0 && (
+          <section className="mb-16">
+            <h2 className="mb-4 font-serif text-xl text-bright">Relationships</h2>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-maya-border text-left text-maya-muted">
+                <tr className="border-b border-border text-left text-xs text-muted">
                   <th className="pb-2 pr-4">Subject</th>
                   <th className="pb-2 pr-4">Predicate</th>
                   <th className="pb-2 pr-4">Object</th>
@@ -113,45 +81,19 @@ export default async function LorePage({ params }: Props) {
                 </tr>
               </thead>
               <tbody>
-                {relationships.map((r, i) => {
-                  const objEntity = resolveEntity(r.object, r.objectType);
-                  const subjEntity = resolveEntity(r.subject, r.subjectType);
+                {rels.map((r, i) => {
+                  const subj = resolveEntity(r.subject, r.subjectType);
+                  const obj = resolveEntity(r.object, r.objectType);
                   return (
-                    <tr
-                      key={i}
-                      className="border-b border-maya-border/50"
-                      data-provenance={r.provenance}
-                    >
+                    <tr key={i} className="border-b border-border/50">
                       <td className="py-2 pr-4">
-                        {subjEntity ? (
-                          <Link
-                            href={subjEntity.href}
-                            className="text-maya-emerald underline"
-                          >
-                            {subjEntity.name}
-                          </Link>
-                        ) : (
-                          <span className="font-mono">{r.subject}</span>
-                        )}
+                        {subj ? <Link href={subj.href} className="text-teal underline">{subj.name}</Link> : r.subject}
                       </td>
-                      <td className="py-2 pr-4 text-maya-violet">
-                        {r.predicate}
-                      </td>
+                      <td className="py-2 pr-4 text-violet">{r.predicate}</td>
                       <td className="py-2 pr-4">
-                        {objEntity ? (
-                          <Link
-                            href={objEntity.href}
-                            className="text-maya-emerald underline"
-                          >
-                            {objEntity.name}
-                          </Link>
-                        ) : (
-                          <span>{r.object}</span>
-                        )}
+                        {obj ? <Link href={obj.href} className="text-teal underline">{obj.name}</Link> : r.object}
                       </td>
-                      <td className="py-2 font-mono text-xs text-maya-muted">
-                        {r.provenance}
-                      </td>
+                      <td className="py-2 font-mono text-xs text-muted">{r.provenance}</td>
                     </tr>
                   );
                 })}
@@ -160,27 +102,21 @@ export default async function LorePage({ params }: Props) {
           </section>
         )}
 
-        <nav aria-label="All lore" className="mt-12">
-          <h2 className="mb-4 text-lg font-semibold text-maya-gold">
-            All Lore Entries
-          </h2>
-          <ul className="flex flex-wrap gap-2" role="list">
-            {allConcepts.map((c) => (
-              <li key={c.id}>
-                <Link
-                  href={`/lore/${c.id}`}
-                  className={`rounded border px-3 py-1 text-sm transition-colors ${
-                    c.id === concept.id
-                      ? "border-maya-gold bg-maya-gold/10 text-maya-gold"
-                      : "border-maya-border hover:border-maya-gold-dim"
-                  }`}
-                  aria-current={c.id === concept.id ? "page" : undefined}
-                >
-                  {c.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <nav aria-label="All lore" className="flex flex-wrap gap-2">
+          {all.map((c) => (
+            <Link
+              key={c.id}
+              href={`/lore/${c.id}`}
+              className={`rounded border px-3 py-1 text-xs transition-colors ${
+                c.id === concept.id
+                  ? "border-gold bg-gold/10 text-gold"
+                  : "border-border hover:border-gold-dim"
+              }`}
+              aria-current={c.id === concept.id ? "page" : undefined}
+            >
+              {c.name}
+            </Link>
+          ))}
         </nav>
       </article>
     </>
