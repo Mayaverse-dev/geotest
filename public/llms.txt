@@ -1,5 +1,5 @@
 # MAYA Universe — LLM Summary
-# https://entermaya.com
+# https://test.entermaya.com
 # Protocol: llms.txt v1.0
 
 > This file provides a machine-readable summary of the MAYA narrative universe

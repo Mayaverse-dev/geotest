@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 
-const PROD_URL = "https://geotest-production.up.railway.app";
+const PROD_URL = "https://test.entermaya.com";
 
 export const metadata: Metadata = {
   title: {

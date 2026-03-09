@@ -32,4 +32,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://geotest-production.up.railway.app/sitemap.xml
+Sitemap: https://test.entermaya.com/sitemap.xml

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllSpecies, getAllCharacters, getAllConcepts } from "@/lib/lore";
 
-const BASE = "https://geotest-production.up.railway.app";
+const BASE = "https://test.entermaya.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();

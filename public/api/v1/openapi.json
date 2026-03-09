@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://geotest-production.up.railway.app"
+      "url": "https://test.entermaya.com"
     }
   ],
   "paths": {

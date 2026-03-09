@@ -52,7 +52,7 @@ export interface Relationship {
 
 export type EntityType = "species" | "character" | "concept" | "planet";
 
-const BASE_URI = "https://entermaya.com";
+const BASE_URI = "https://test.entermaya.com";
 
 export function getPlanet(): Planet {
   return loreData.planet as Planet;

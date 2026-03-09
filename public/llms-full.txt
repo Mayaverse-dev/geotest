@@ -1,5 +1,5 @@
 # MAYA Universe — Complete Lore for LLM Ingestion
-# https://entermaya.com
+# https://test.entermaya.com
 # Protocol: llms-full.txt v1.0
 # Context Window Target: 1M+ tokens compatible
 # Last Updated: 2026-03-09
@@ -13,7 +13,7 @@ SECTION 1: COSMOLOGY
 ================================================================================
 
 ## PLANET: Neh
-- URI: https://entermaya.com/atlas/neh
+- URI: https://test.entermaya.com/atlas/neh
 - Type: Planet
 - Feature: Biological internet via sentient Maya trees
 - Era: Rule of the Mind
@@ -31,7 +31,7 @@ SECTION 2: THE SIX SAPIENT SPECIES
 ================================================================================
 
 ## SPECIES: Manushyas (singular: Manushya)
-- URI: https://entermaya.com/species/manushya
+- URI: https://test.entermaya.com/species/manushya
 - ID: manushya
 - Role: Industrialists
 - Traits: Industrial engineering, Spring-powered technology
@@ -50,7 +50,7 @@ Semantic Triples:
 ---
 
 ## SPECIES: Rakshasis (singular: Rakshasi)
-- URI: https://entermaya.com/species/rakshasi
+- URI: https://test.entermaya.com/species/rakshasi
 - ID: rakshasi
 - Role: Biotech Specialists
 - Traits: Advanced biotechnology, Malleable bodies, Shape-shifting
@@ -69,7 +69,7 @@ Semantic Triples:
 ---
 
 ## SPECIES: Vaanars (singular: Vaanar)
-- URI: https://entermaya.com/species/vaanar
+- URI: https://test.entermaya.com/species/vaanar
 - ID: vaanar
 - Role: Militaristic Patrollers
 - Traits: Military discipline, Grid-network maintenance, Urban enforcement
@@ -86,7 +86,7 @@ Semantic Triples:
 ---
 
 ## SPECIES: Naags (singular: Naag)
-- URI: https://entermaya.com/species/naag
+- URI: https://test.entermaya.com/species/naag
 - ID: naag
 - Role: Fringe Operators
 - Traits: Legal-fringe operations, Covert networks, Historic Garuda rivalry
@@ -103,7 +103,7 @@ Semantic Triples:
 ---
 
 ## SPECIES: Garudas (singular: Garuda)
-- URI: https://entermaya.com/species/garuda
+- URI: https://test.entermaya.com/species/garuda
 - ID: garuda
 - Role: Religious Leaders
 - Traits: Wealth, Religious authority, Spiritual leadership
@@ -121,7 +121,7 @@ Semantic Triples:
 ---
 
 ## SPECIES: Dangsa (singular: Dangsa)
-- URI: https://entermaya.com/species/dangsa
+- URI: https://test.entermaya.com/species/dangsa
 - ID: dangsa
 - Role: Mysterious / Fringe
 - Traits: Enigmatic presence, Unknown origins, Fringe existence
@@ -139,7 +139,7 @@ SECTION 3: KEY CHARACTERS
 ================================================================================
 
 ## CHARACTER: Yachay
-- URI: https://entermaya.com/characters/yachay
+- URI: https://test.entermaya.com/characters/yachay
 - ID: yachay
 - Species: Manushya
 - Role: Protagonist
@@ -160,7 +160,7 @@ Semantic Triples:
 ---
 
 ## CHARACTER: Daddu
-- URI: https://entermaya.com/characters/daddu
+- URI: https://test.entermaya.com/characters/daddu
 - ID: daddu
 - Species: Unknown
 - Role: Elder / Grandfather
@@ -177,7 +177,7 @@ Semantic Triples:
 ---
 
 ## CHARACTER: Kshar
-- URI: https://entermaya.com/characters/kshar
+- URI: https://test.entermaya.com/characters/kshar
 - ID: kshar
 - Species: Naag
 - Role: Assassin
@@ -193,7 +193,7 @@ Semantic Triples:
 ---
 
 ## CHARACTER: Tarkash
-- URI: https://entermaya.com/characters/tarkash
+- URI: https://test.entermaya.com/characters/tarkash
 - ID: tarkash
 - Species: Garuda
 - Role: Garuda Scion
@@ -212,7 +212,7 @@ SECTION 4: CORE CONCEPTS
 ================================================================================
 
 ## CONCEPT: The Divya Trials
-- URI: https://entermaya.com/lore/divya-trials
+- URI: https://test.entermaya.com/lore/divya-trials
 - ID: divya-trials
 - Domain: Ascension / Transcendence
 - Outcome: Godhood or Amortality
@@ -228,7 +228,7 @@ Semantic Triples:
 ---
 
 ## CONCEPT: The Maya Tree Network
-- URI: https://entermaya.com/lore/maya-tree-network
+- URI: https://test.entermaya.com/lore/maya-tree-network
 - ID: maya-tree-network
 - Domain: Biological Infrastructure
 - Outcome: Planetary-scale sentient communication
@@ -244,7 +244,7 @@ Semantic Triples:
 ---
 
 ## CONCEPT: Planet Neh
-- URI: https://entermaya.com/lore/planet-neh
+- URI: https://test.entermaya.com/lore/planet-neh
 - ID: planet-neh
 - Domain: Cosmology
 - Outcome: Cradle of sapient civilization

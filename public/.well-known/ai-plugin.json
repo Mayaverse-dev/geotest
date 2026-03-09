@@ -9,9 +9,9 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://geotest-production.up.railway.app/api/v1/openapi.json"
+    "url": "https://test.entermaya.com/api/v1/openapi.json"
   },
-  "logo_url": "https://geotest-production.up.railway.app/favicon.ico",
+  "logo_url": "https://test.entermaya.com/favicon.ico",
   "contact_email": "info@entermaya.com",
   "legal_info_url": "https://entermaya.com"
 }
