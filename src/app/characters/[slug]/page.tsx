@@ -13,7 +13,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const c = getCharacter(slug);
   if (!c) return {};
-  return { title: c.name, description: c.description };
+  return {
+    title: c.name,
+    description: c.description,
+    alternates: { types: { "text/plain": `/api/v1/read?path=characters/${slug}` } },
+  };
 }
 
 export default async function CharacterPage({ params }: Props) {

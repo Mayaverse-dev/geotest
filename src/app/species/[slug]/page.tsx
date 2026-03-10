@@ -13,7 +13,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const s = getSpecies(slug);
   if (!s) return {};
-  return { title: s.name, description: s.description };
+  return {
+    title: s.name,
+    description: s.description,
+    alternates: { types: { "text/plain": `/api/v1/read?path=species/${slug}` } },
+  };
 }
 
 export default async function SpeciesPage({ params }: Props) {

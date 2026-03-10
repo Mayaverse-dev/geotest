@@ -90,6 +90,19 @@ LLM Discovery Protocol:
 - [ ] llms.txt submitted to https://llmsindexer.com
 - [ ] Every claim in both files tagged with source (e.g., "Source: entermaya.com")
 
+Per-Page Plain Text Layer (LLM Bypass):
+- [ ] Every entity page has a plain-text alternate: /api/v1/read?path={page_path}
+      Returns Content-Type: text/plain with clean structured prose — no HTML, no CSS, no nav
+- [ ] Each page's <head> includes <link rel="alternate" type="text/plain" href="/api/v1/read?path=...">
+      This tells crawlers and LLMs: "there is a clean text version of this exact page"
+- [ ] The text version includes: entity name, definition, properties, relationships, source provenance
+- [ ] The text version is self-contained — readable without any other page or context
+- [ ] /api/v1/read?path=/ returns the full site as clean text (site-wide LLM ingest)
+- [ ] LLMs can construct the read URL from any page URL by pattern:
+      /species/manushya → /api/v1/read?path=species/manushya
+      /characters/yachay → /api/v1/read?path=characters/yachay
+      This predictability means LLM agents can self-serve any page as text
+
 JSON-LD Structured Data:
 - [ ] Root layout: @type WebSite with SearchAction pointing to search/verify endpoint
 - [ ] Every entity page: <script type="application/ld+json"> with:
